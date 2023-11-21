@@ -3,7 +3,6 @@
     -fx-background-color: rgb(25, 26, 27);
     -fx-font-family: 'Open Sans', sans-serif;
     -fx-border-radius: 5;
-    -fx-background-radius: 15;
 }
 
 .textfield {
@@ -16,9 +15,50 @@
   -fx-text-fill: white;
   -fx-font-weight: bold;
   -fx-background-radius: 30;
+  -fx-border-radius: 30;
+  -fx-border-color: rgb(0, 0, 0);
 }
 
-.parteDerecha{
-    
+.button:hover{
+  -fx-background-color: rgb(71, 18, 92);
+
 }
 
+.button:pressed{
+  -fx-background-color: rgb(47, 12, 61);
+}
+
+
+.parteDer{
+  -fx-background-color: rgb(71, 18, 92);
+}
+
+.parteIz{
+  -fx-background-color: rgb(47, 12, 61);
+
+}
+
+.linear-grad-to-top{
+  -fx-background-color: linear-gradient(to top, #513fc9, #5747c2 );
+}
+
+.linea
+{
+  -fx-background-color: linear-gradient(to top, rgb(199, 109, 211), #59036e);
+}
+
+.caca{
+  -fx-background-color: linear-gradient(to top, rgb(157, 86, 167), #420352);
+
+}
+
+.joni1{
+  -fx-background-color: linear-gradient(to top, #0d0936, #241a8f);
+}
+
+.bttn {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
