@@ -5,18 +5,32 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.intellij.lang.annotations.MagicConstant;
 import java.io.IOException;
 
+/**
+ * @author JonathanBetPer
+ * @version v1
+ * @since 21/11/2023
+
+ * Clase Navegación
+ * Se encarga de cargar iniciar las distintas ventanas de la interfaz y de cerrarlas
+ */
+
 public class Navegacion {
+    @MagicConstant(stringValues = {Navegacion.LOGIN, Navegacion.REGISTER, Navegacion.PANTALLA},
+            valuesFromClass = Navegacion.class)
+    private static final String RUTA = "/com/example/beatbuddy/views/";
+    private static final String LOGIN = "LogIn.fxml";
+    public static final String REGISTER = "Register.fxml";
+    public static final String PANTALLA = "Pantalla.fxml";
 
-    public static final String LogIn = "/com/example/cambiadorinterfaz/hello-view.fxml";
 
-    public static boolean cargarInterfaz(String viewToLoad, Modality modality, String stageTitle){
-
-        FXMLLoader fxmlLoader = new FXMLLoader(Navegacion.class.getResource(viewToLoad));
-
+    public static boolean cargarInterfaz(String interfaz, Modality modality, String stageTitle){
+        FXMLLoader fxmlLoader = new FXMLLoader(Navegacion.class.getResource(RUTA+interfaz));
         try {
             Parent root = fxmlLoader.load();
             Scene scene = new Scene(root);
@@ -25,6 +39,7 @@ public class Navegacion {
             stage.setScene(scene);
             stage.initModality(modality);
             stage.show();
+            stage.getIcons().add(new Image(""));
             return true;
         } catch (IOException e) {
             e.printStackTrace();
