@@ -9,12 +9,18 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-public class Navegacion {
+/**
+ * @author JonathanBetPer
+ * @since 21/11/2023
+ * @v0.1
+ * Clase Navegación
+ * Gestiona el inicio y el cierre de las interfaces de la aplicación
+ */
 
-    public static final String LogIn = "/com/example/cambiadorinterfaz/hello-view.fxml";
+public class Navegacion {
+    public static final String LogIn = "/com/example/beatbuddy/views/LogIn.fxml";
 
     public static boolean cargarInterfaz(String viewToLoad, Modality modality, String stageTitle){
-
         FXMLLoader fxmlLoader = new FXMLLoader(Navegacion.class.getResource(viewToLoad));
 
         try {

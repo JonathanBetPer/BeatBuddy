@@ -1,0 +1,24 @@
+
+.root {
+    -fx-background-color: rgb(25, 26, 27);
+    -fx-font-family: 'Open Sans', sans-serif;
+    -fx-border-radius: 5;
+    -fx-background-radius: 15;
+}
+
+.textfield {
+  -fx-background-color: #ffffff;
+  -fx-background-radius: 30;
+}
+
+.button{
+  -fx-background-color: rgb(92, 23, 119);
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-background-radius: 30;
+}
+
+.parteDerecha{
+    
+}
+
