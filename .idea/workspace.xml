@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d8bebf0-fee1-49e0-b460-9c66f34390a2" name="Changes" comment="" />
+    <list default="true" id="5d8bebf0-fee1-49e0-b460-9c66f34390a2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/PantallaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/PantallaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/files/css.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/files/css.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/LogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/LogIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/Pantalla.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/Pantalla.fxml" afterDir="false" />
+    </list>
     <list id="d5717de9-ae7e-4845-b50c-2e4c12af8697" name="Changes by 2dam" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +44,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "viewsAndControllers",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
     "last_opened_file_path": "C:/Users/2dam/IdeaProjects/BeatBuddy/src/main/resources/com/example/beatbuddy/files",
     "project.structure.last.edited": "Project",
