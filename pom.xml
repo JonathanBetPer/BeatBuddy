@@ -73,11 +73,21 @@
             <artifactId> sqlite-jdbc </artifactId>
             <version> 3.42.0.0</version>
         </dependency>
+
+        <!-- Documentacion -->
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>13.0</version>
         </dependency>
+
+        <!-- Reproductor -->
+        <dependency>
+            <groupId>com.googlecode.soundlibs</groupId>
+            <artifactId>basicplayer</artifactId>
+            <version>3.0.0.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>

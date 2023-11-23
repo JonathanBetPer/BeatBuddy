@@ -1,4 +1,4 @@
-package com.example.beatbuddy.model.bbdd;
+package com.example.beatbuddy.model.bbdd.queries;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -8,6 +8,7 @@ module com.example.beatbuddy {
     requires mysql.connector.j;
     requires java.sql;
     requires annotations;
+    requires basicplayer;
 
     opens com.example.beatbuddy to javafx.fxml;
     exports com.example.beatbuddy;
