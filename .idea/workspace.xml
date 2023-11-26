@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d8bebf0-fee1-49e0-b460-9c66f34390a2" name="Changes" comment="Creacion clases. Navegacion hecha. Conexion hecha">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Reproductor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/MainApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Cancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Cancion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/ConsultaUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultaUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/ConsultasBeatBuddyUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultasBeatBuddyUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/ConsultasCancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultasCancion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/ConsultasInicioYRegistro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultasInicioYRegistro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/ConsultasPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultasPlaylist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Encriptacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/utils/Encriptacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Navegacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/utils/Navegacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Playlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Reproductor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Reproductor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/Conexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/Conexion.java" afterDir="false" />
     </list>
     <list id="d5717de9-ae7e-4845-b50c-2e4c12af8697" name="Changes by 2dam" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +53,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;modelo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yonip/Documents/2DAM/AED/UT2/BBDD_ArchivosBlob&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;CodeWithMe&quot;
   }
 }</component>

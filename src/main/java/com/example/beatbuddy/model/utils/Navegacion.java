@@ -1,4 +1,4 @@
-package com.example.beatbuddy.model;
+package com.example.beatbuddy.model.utils;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

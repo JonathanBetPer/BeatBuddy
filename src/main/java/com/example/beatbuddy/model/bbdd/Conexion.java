@@ -12,8 +12,8 @@ public class Conexion {
     private final String usuario;
     private final String password;
     private final String url;
-    private static final String mysqlDriver = "jdbc:mysql://";
-    private static final String sqliteDirver = "jdbc:sqlite:";
+    public static final String mysqlDriver = "jdbc:mysql://";
+    public static final String sqliteDirver = "jdbc:sqlite:";
 
     public Conexion(String Driver, String URL, String usuario, String contrasena) {
         this.url = Driver + URL;

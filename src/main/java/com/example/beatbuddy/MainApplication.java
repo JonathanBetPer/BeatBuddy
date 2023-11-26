@@ -1,6 +1,6 @@
 package com.example.beatbuddy;
 
-import com.example.beatbuddy.model.Navegacion;
+import com.example.beatbuddy.model.utils.Navegacion;
 import javafx.application.Application;
 import javafx.stage.Modality;
 import javafx.stage.Stage;

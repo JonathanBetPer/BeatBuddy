@@ -1,4 +1,4 @@
-package com.example.beatbuddy.model;
+package com.example.beatbuddy.model.utils;
 
 import com.password4j.Hash;
 import com.password4j.Password;
