@@ -1,0 +1,67 @@
+
+.root {
+    -fx-background-color: rgb(25, 26, 27);
+    -fx-font-family: 'Open Sans', sans-serif;
+    -fx-border-radius: 5;
+}
+
+.textfield {
+  -fx-background-color: #ffffff;
+  -fx-background-radius: 30;
+}
+
+.buttonn{
+  -fx-background-color: rgb(92, 23, 119);
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-background-radius: 30;
+  -fx-border-radius: 30;
+  -fx-border-color: rgb(0, 0, 0);
+}
+
+.button:hover{
+  -fx-background-color: rgb(71, 18, 92);
+
+}
+
+.button:pressed{
+  -fx-background-color: rgb(47, 12, 61);
+}
+
+.fondoPaneles {
+    -fx-background-color: rgb(25, 26, 27);
+    -fx-font-family: 'Open Sans', sans-serif;
+    -fx-border-radius: 5;
+}
+
+.letra {
+
+  -fx-text-fill: white;
+  -fx-font-family: 'sans serif';
+  -fx-font-weight: bold;
+
+}
+
+
+.image-button{
+  -fx-background-image: url('/Users/2dam/IdeaProjects/BeatBuddy/src/main/resources/com/example/beatbuddy/Icons/caca.png');
+  -fx-background-size: cover; /* ajusta según tus necesidades */
+  -fx-background-repeat: no-repeat;
+}
+
+.fondoLista {
+  -fx-background-color: rgb(42, 44, 46);
+}
+
+.imagennn{
+  -fx-background-image: url('/Users/2dam/IdeaProjects/BeatBuddy/src/main/resources/boton-de-play.png');
+  -fx-background-size: cover; /* ajusta según tus necesidades */
+  -fx-background-repeat: no-repeat;
+  -fx-background-color: transparent;
+
+}
+
+.bordeee{
+  -fx-background-radius: 30;
+  -fx-border-radius: 30;
+}
