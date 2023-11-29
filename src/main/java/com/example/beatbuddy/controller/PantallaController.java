@@ -1,5 +1,8 @@
 package com.example.beatbuddy.controller;
 
+import com.example.beatbuddy.model.Usuario;
+import com.example.beatbuddy.model.bbdd.Conexion;
+import com.example.beatbuddy.model.bbdd.queries.ConsultaUsuario;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.SnapshotParameters;
@@ -20,9 +23,22 @@ public class PantallaController implements Initializable {
     @FXML
     public ImageView myImageView;
 
+    public Usuario usuarioActual;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+
+
+
+
+    }
+
+    public PantallaController() {
+    }
+
+    public void setUsuarioActual(Usuario usuarioActual) {
+        this.usuarioActual = usuarioActual;
     }
 }

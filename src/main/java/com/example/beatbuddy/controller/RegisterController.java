@@ -1,5 +1,6 @@
 package com.example.beatbuddy.controller;
 
+import com.example.beatbuddy.model.Usuario;
 import com.example.beatbuddy.model.bbdd.Conexion;
 import com.example.beatbuddy.model.bbdd.queries.ConsultasInicioYRegistro;
 import com.example.beatbuddy.model.utils.Encriptacion;
@@ -30,7 +31,9 @@ public class RegisterController {
         if (comprobarCamposVacios()){
             if (ConsultasInicioYRegistro.comprobarExisteUsuario(Conexion.getConnection(), tfNombreUsuario.getText(), tfCorreoUsuario.getText())){
                 Hash hash = Encriptacion.generarHash(tfContrasenaUsuario.getText());
+/*
                 ConsultasInicioYRegistro.darAltaUsuario(Conexion.getConnection(), tfNombreUsuario.getText(), tfNombreCompleto.getText(), tfCorreoUsuario.getText(), hash.getSalt(), hash.getResult());
+*/
 
             }
         }
