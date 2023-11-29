@@ -10,10 +10,16 @@ module com.example.beatbuddy {
     requires annotations;
     requires basicplayer;
 
-    opens com.example.beatbuddy to javafx.fxml;
     exports com.example.beatbuddy;
-
     exports com.example.beatbuddy.controller;
-    opens com.example.beatbuddy.controller to javafx.fxml;
+    exports com.example.beatbuddy.model;
+    exports com.example.beatbuddy.model.utils;
+    exports com.example.beatbuddy.model.bbdd;
+    exports com.example.beatbuddy.model.bbdd.queries;
+
+
+    opens com.example.beatbuddy to javafx.fxml, com.jfoenix, org.controlsfx.controls;
+    opens com.example.beatbuddy.model to javafx.fxml, com.jfoenix, org.controlsfx.controls;
+    opens com.example.beatbuddy.controller to javafx.fxml, com.jfoenix, org.controlsfx.controls;
 
 }

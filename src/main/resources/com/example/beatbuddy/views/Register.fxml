@@ -8,24 +8,25 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="356.0" prefWidth="277.0" stylesheets="@../files/css.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="277.0" stylesheets="@../files/css.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.beatbuddy.controller.RegisterController">
    <children>
-      <Pane prefHeight="400.0" prefWidth="288.0">
+      <Pane prefHeight="534.0" prefWidth="277.0">
          <children>
             <ImageView fitHeight="116.0" fitWidth="83.0" layoutX="97.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons/logo1.png" />
                </image>
             </ImageView>
-            <Button layoutX="64.0" layoutY="257.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="149.0" text="SIGN IN" />
-            <JFXTextField layoutX="64.0" layoutY="132.0" prefHeight="25.0" prefWidth="149.0" promptText="Usuario" />
-            <JFXPasswordField layoutX="64.0" layoutY="194.0" prefHeight="25.0" prefWidth="149.0" promptText="Contraseña" />
-            <ImageView fitHeight="65.0" fitWidth="37.0" layoutX="14.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
+            <Button layoutX="64.0" layoutY="340.0" mnemonicParsing="false" onAction="#actionRegistrarse" prefHeight="27.0" prefWidth="149.0" text="SIGN IN" />
+            <JFXTextField fx:id="tfNombreUsuario" layoutX="64.0" layoutY="185.0" prefHeight="25.0" prefWidth="149.0" promptText="Usuario" />
+            <JFXPasswordField fx:id="tfContrasenaUsuario" layoutX="64.0" layoutY="285.0" prefHeight="25.0" prefWidth="149.0" promptText="Contraseña" />
+            <ImageView fitHeight="65.0" fitWidth="37.0" layoutX="14.0" layoutY="379.0" onMouseClicked="#actionVolverLogIn" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons/flechita.png" />
                </image>
             </ImageView>
+            <JFXTextField fx:id="tfCorreoUsuario" layoutX="64.0" layoutY="235.0" prefHeight="25.0" prefWidth="149.0" promptText="Correo" />
+            <JFXTextField fx:id="tfNombreCompleto" layoutX="64.0" layoutY="136.0" prefHeight="25.0" prefWidth="149.0" promptText="Nombre Completo" />
          </children>
       </Pane>
    </children>

@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -24,7 +25,7 @@ public class Navegacion {
     @MagicConstant(stringValues = {Navegacion.LOGIN, Navegacion.REGISTER, Navegacion.PANTALLA},
             valuesFromClass = Navegacion.class)
     private static final String RUTA = "/com/example/beatbuddy/views/";
-    private static final String LOGIN = "LogIn.fxml";
+    public static final String LOGIN = "LogIn.fxml";
     public static final String REGISTER = "Register.fxml";
     public static final String PANTALLA = "Pantalla.fxml";
 
@@ -39,7 +40,6 @@ public class Navegacion {
             stage.setScene(scene);
             stage.initModality(modality);
             stage.show();
-            stage.getIcons().add(new Image(""));
             return true;
         } catch (IOException e) {
             e.printStackTrace();
@@ -51,5 +51,9 @@ public class Navegacion {
         Node source = (Node) e.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
+    }
+    public static void cerrarInterfaz(TextField e){
+        Stage ventanaPrincipal = (Stage) e.getScene().getWindow();
+        ventanaPrincipal.close();
     }
 }

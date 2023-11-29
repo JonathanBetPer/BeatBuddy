@@ -22,7 +22,7 @@ public class Encriptacion {
      * Genera el hash de una contraseña con pimienta y retorna su resultad
      */
     public static Hash generarHash(String passwd){
-        return Password.hash(passwd).addRandomSalt().addPepper(pimienta).withArgon2();
+        return Password.hash(passwd).addRandomSalt(33).addPepper(pimienta).withArgon2();
     }
 
     /**
