@@ -13,9 +13,9 @@ public class Reproductor extends Thread{
     private LinkedList<Cancion> historialCanciones;
     private LinkedList<Cancion> colaCanciones;
 
-    public Reproductor(Cancion cancionActual, LinkedList<Cancion> historialCanciones, LinkedList<Cancion> colaCanciones) {
+    public Reproductor(Cancion cancionActual, LinkedList<Cancion> historialCanciones) {
         this.reproductor = new BasicPlayer();
-        this.cancionActual = null;
+        this.cancionActual = cancionActual;
         this.historialCanciones = historialCanciones;
         this.colaCanciones = new LinkedList<>();
     }
@@ -25,19 +25,15 @@ public class Reproductor extends Thread{
     }
 
 
-    public void comenzar(BufferedInputStream bufferedInputStream) {
+    public void comenzar() {
 
         try {
-            if (cancionActual!=null) {
-                if (bufferedInputStream != null) {
-                    reproductor.open(bufferedInputStream);
+                if (cancionActual.getArchivo() != null) {
+                    reproductor.open(cancionActual.getArchivo());
                     reproductor.play();
                 } else {
                     System.out.println("Error al leer el archivo");
                 }
-            } else {
-                System.out.println("Ruta vacía");
-            }
         } catch (BasicPlayerException e) {
             e.printStackTrace();
         }
@@ -68,14 +64,51 @@ public class Reproductor extends Thread{
         }
     }
 
+    public void avanzarCancion() {
+        historialCanciones.addFirst(cancionActual);
+        cancionActual = colaCanciones.poll();
+        try {
+            sleep(500);
 
-    public BasicPlayer getReproductor() {
-        return reproductor;
+        }catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        comenzar();
     }
 
+    public void retrocederCancion() {
+        colaCanciones.addFirst(cancionActual);
+        cancionActual = historialCanciones.poll();
+        try {
+            sleep(500);
 
+        }catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        comenzar();
+    }
 
+    public void agregarCancionCola(Cancion cancion) {
+        colaCanciones.add(cancion);
+    }
 
+    public void agregarCancionCola(LinkedList<Cancion> listaCanciones) {
+        colaCanciones.addAll(listaCanciones);
+    }
 
+    public void shuffleCola() {
+        LinkedList<Cancion> colaAux = new LinkedList<>();
+        int random;
+        while (!colaCanciones.isEmpty()) {
+            random = (int) (Math.random() * colaCanciones.size());
+            colaAux.add(colaCanciones.get(random));
+            colaCanciones.remove(random);
+        }
+        colaCanciones = colaAux;
+    }
+
+    public void limpiarCola() {
+        colaCanciones.clear();
+    }
 
 }

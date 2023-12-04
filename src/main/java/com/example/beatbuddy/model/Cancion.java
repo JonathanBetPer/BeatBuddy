@@ -1,20 +1,22 @@
 package com.example.beatbuddy.model;
 
+import java.io.File;
+
 public class Cancion {
 
     private int ID;
     private String nombre;
-    private String genero;
-
     private String autor;
-    private String rutaArchivo;
 
-    public Cancion(int ID, String nombre, String genero, String autor, String rutaArchivo) {
+    private String letra;
+    private File archivo;
+
+    public Cancion(int ID, String nombre, String autor, String letra, File archivo) {
         this.ID = ID;
         this.nombre = nombre;
-        this.genero = genero;
+        this.letra = letra;
         this.autor = autor;
-        this.rutaArchivo = rutaArchivo;
+        this.archivo = archivo;
     }
 
     public int getID() {
@@ -33,12 +35,12 @@ public class Cancion {
         this.nombre = nombre;
     }
 
-    public String getGenero() {
-        return genero;
+    public String getLetra() {
+        return letra;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setLetra(String letra) {
+        this.letra = letra;
     }
 
     public String getAutor() {
@@ -49,12 +51,12 @@ public class Cancion {
         this.autor = autor;
     }
 
-    public String getRutaArchivo() {
-        return rutaArchivo;
+    public File getArchivo() {
+        return archivo;
     }
 
-    public void setRutaArchivo(String rutaArchivo) {
-        this.rutaArchivo = rutaArchivo;
+    public void setRutaArchivo(File archivo) {
+        this.archivo = archivo;
     }
 
 

@@ -20,8 +20,6 @@ public class Usuario {
         this.listaPlaylists = new LinkedList<>();
     }
 
-
-
     public String getID() {
         return ID;
     }

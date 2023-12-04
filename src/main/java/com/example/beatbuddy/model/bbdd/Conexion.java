@@ -12,11 +12,9 @@ public class Conexion {
     private final String usuario;
     private final String password;
     private final String url;
-    public static final String mysqlDriver = "jdbc:mysql://";
-    public static final String sqliteDirver = "jdbc:sqlite:";
 
-    public Conexion(String Driver, String URL, String usuario, String contrasena) {
-        this.url = Driver + URL;
+    public Conexion(String URL, String usuario, String contrasena) {
+        this.url = "jdbc:mysql://" + URL;
         this.password = contrasena;
         this.usuario = usuario;
     }

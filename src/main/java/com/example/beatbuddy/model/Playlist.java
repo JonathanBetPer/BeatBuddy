@@ -4,15 +4,27 @@ import java.util.LinkedList;
 import java.util.Objects;
 
 public class Playlist {
+    private int ID;
     private String nombre;
     private String descripcion;
+    private int idUsuario;
     private LinkedList<Cancion> lista;
 
-    public Playlist(String nombre, String descripcion, LinkedList<Cancion> lista) {
+    public Playlist(int ID, String nombre, String descripcion, int idUsuario, LinkedList<Cancion> lista) {
+        this.ID = ID;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.idUsuario = idUsuario;
         this.lista = lista;
     }
+
+     public Playlist(int ID, String nombre, String descripcion, int idUsuario) {
+          this.ID = ID;
+          this.nombre = nombre;
+          this.descripcion = descripcion;
+          this.idUsuario = idUsuario;
+          this.lista = new LinkedList<>();
+     }
 
     public Playlist(String nombre, String descripcion) {
         this.nombre = nombre;
@@ -50,6 +62,22 @@ public class Playlist {
 
     public void eliminarCancion(Cancion cancionAEliminar){
         this.lista.remove(cancionAEliminar);
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     @Override
