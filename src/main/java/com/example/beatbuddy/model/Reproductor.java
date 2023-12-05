@@ -1,23 +1,29 @@
 package com.example.beatbuddy.model;
 
-import javazoom.jlgui.basicplayer.BasicPlayer;
-import javazoom.jlgui.basicplayer.BasicPlayerException;
+import javazoom.jlgui.basicplayer.*;
 
 import java.io.BufferedInputStream;
 import java.util.LinkedList;
+import java.util.Map;
 
-public class Reproductor extends Thread{
+public class Reproductor extends Thread implements BasicPlayerListener {
 
     private BasicPlayer reproductor;
     private Cancion cancionActual;
     private LinkedList<Cancion> historialCanciones;
     private LinkedList<Cancion> colaCanciones;
+    private long songLengthInMicroseconds;
+
+    private boolean isRepeat;
+
 
     public Reproductor(Cancion cancionActual, LinkedList<Cancion> historialCanciones) {
         this.reproductor = new BasicPlayer();
+        this.reproductor.addBasicPlayerListener(this);
         this.cancionActual = cancionActual;
         this.historialCanciones = historialCanciones;
         this.colaCanciones = new LinkedList<>();
+        this.isRepeat = false;
     }
 
     public void setCancionActual(Cancion cancionActual) {
@@ -65,15 +71,17 @@ public class Reproductor extends Thread{
     }
 
     public void avanzarCancion() {
-        historialCanciones.addFirst(cancionActual);
-        cancionActual = colaCanciones.poll();
-        try {
-            sleep(500);
+        if (!colaCanciones.isEmpty()) {
+            historialCanciones.addFirst(cancionActual);
+            cancionActual = colaCanciones.poll();
+            try {
+                sleep(500);
 
-        }catch (InterruptedException e) {
-            e.printStackTrace();
+            }catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            comenzar();
         }
-        comenzar();
     }
 
     public void retrocederCancion() {
@@ -111,4 +119,37 @@ public class Reproductor extends Thread{
         colaCanciones.clear();
     }
 
+    @Override
+    public void opened(Object o, Map map) {
+
+    }
+
+
+    @Override
+    public void progress(int bytesread, long microseconds, byte[] pcmdata, Map properties) {
+        this.songLengthInMicroseconds = microseconds;
+    }
+
+    public long getSongLengthInMicroseconds() {
+        return songLengthInMicroseconds;
+    }
+
+    @Override
+    public void stateUpdated(BasicPlayerEvent basicPlayerEvent) {
+        //EOM = End of Media
+        if (basicPlayerEvent.getCode() == BasicPlayerEvent.EOM) {
+
+            if (isRepeat) {
+              comenzar();
+            } else {
+                avanzarCancion();
+            }
+
+        }
+    }
+
+    @Override
+    public void setController(BasicController basicController) {
+
+    }
 }

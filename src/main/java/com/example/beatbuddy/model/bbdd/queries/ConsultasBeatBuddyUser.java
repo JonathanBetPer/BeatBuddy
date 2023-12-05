@@ -19,6 +19,7 @@ public class ConsultasBeatBuddyUser {
             while (resultadoSQL.next()) {
                 listasPlaylist.add(ConsultasPlaylist.getPlaylist(connection, resultadoSQL.getInt("ID")));
             }
+            
 
         } catch (SQLException e) {
             e.printStackTrace();
