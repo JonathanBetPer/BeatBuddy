@@ -595,7 +595,9 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <collation id="105" parent="1" name="ucs2_roman_ci">
       <Charset>ucs2</Charset>
     </collation>
-    <collation id="106" parent="1"/>
+    <collation id="106" parent="1" name="ucs2_persian_ci">
+      <Charset>ucs2</Charset>
+    </collation>
     <collation id="107" parent="1" name="ucs2_esperanto_ci">
       <Charset>ucs2</Charset>
     </collation>

@@ -1,9 +1,12 @@
 package com.example.beatbuddy.controller;
 
 import com.example.beatbuddy.model.Cancion;
+import com.example.beatbuddy.model.Playlist;
 import com.example.beatbuddy.model.Usuario;
 import com.example.beatbuddy.model.bbdd.Conexion;
 import com.example.beatbuddy.model.bbdd.queries.ConsultaUsuario;
+import com.example.beatbuddy.model.bbdd.queries.ConsultasBeatBuddyUser;
+import com.example.beatbuddy.model.bbdd.queries.ConsultasPlaylist;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,7 +24,9 @@ import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
 
 
@@ -30,7 +35,7 @@ public class PantallaController implements Initializable {
     @FXML
     public ImageView myImageView;
     @FXML
-    public VBox paneLista;
+    public VBox vboxListasPlaylists;
 
 
     //
@@ -38,20 +43,19 @@ public class PantallaController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
 
-        ArrayList<Cancion> listaCanciones = new ArrayList<>();
+        LinkedList<Playlist> listaPlaylist = ConsultasBeatBuddyUser.obtenerListasBeatBuddy(Conexion.getConnection());
 
-        listaCanciones.add(new Cancion(1, "SHE DONT GIVE", "Reggaeton", "Lola Indigo", "ajsajsajs"));
-
-        for (int i = 0; i < listaCanciones.size(); i++) {
+        System.out.println(listaPlaylist.size());
+        for (int i = 0; i < listaPlaylist.size(); i++) {
 
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("com/example/beatbuddy/views/Componentes/ListaCanciones.fxml"));
+            fxmlLoader.setLocation(PantallaController.class.getResource("/com/example/beatbuddy/views/Componentes/ListaCanciones.fxml"));
 
             try{
-                AnchorPane anchorPane = fxmlLoader.load();
-                ListaCancionesController listaCancionesController = fxmlLoader.getController();
-                listaCancionesController.setData(listaCanciones.get(i));
-                paneLista.getChildren().add(anchorPane);
+                HBox hBox = fxmlLoader.load();
+                ListaPlaylistsController listaPlaylistsController = fxmlLoader.getController();
+                listaPlaylistsController.setData(listaPlaylist.get(i));
+                vboxListasPlaylists.getChildren().add(hBox);
 
             } catch (IOException e) {
                 throw new RuntimeException(e);

@@ -22,11 +22,8 @@ public class MainApplication extends Application {
     public static void main(String[] args) {
         new Conexion("yoni13ja.ddns.net:13306/BeatBuddy", "beatbuddy", "BeatBuddy@133").iniciar();
 
-        Reproductor reproductor = new Reproductor(ConsultasCancion.obtenerCancion(Conexion.getConnection(), 1), null);
-
-        reproductor.comenzar();
 
 
-        //launch();
+        launch();
     }
 }

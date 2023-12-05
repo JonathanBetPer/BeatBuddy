@@ -29,15 +29,15 @@ public class LogInController {
     }
 
     public void actionBotonIniciarSesion(ActionEvent actionEvent) {
-
-        if (comprobarCamposVacios()){
+        accederInterfazPrincipal(actionEvent);
+/*        if (comprobarCamposVacios()){
             if (ConsultasInicioYRegistro.comprobarExisteUsuario(Conexion.getConnection(), tfnombreUsuario.getText(), tfnombreUsuario.getText())){
                 String [] contrasena = ConsultasInicioYRegistro.recuperarContrasena(Conexion.getConnection(), tfnombreUsuario.getText(), tfnombreUsuario.getText());
                 if (Encriptacion.comprobarPasswd(contrasena[0], contrasena[1], tfContrasenaUsuario.getText())){
                     accederInterfazPrincipal(actionEvent);
                 } generarAlerta("DATOS ERRÓNEOS", "CONTRASEÑA INCORRECTA, VUELVE A INTENTARLO", Alert.AlertType.ERROR);
             } generarAlerta("NO EXISTE", "EL USUARIO O CORREO INTRODUCIDO NO EXISTE", Alert.AlertType.ERROR);
-        }
+        }*/
     }
 
     public void actionRegistrarse(ActionEvent actionEvent) {

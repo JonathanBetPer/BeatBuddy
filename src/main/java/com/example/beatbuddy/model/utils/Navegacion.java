@@ -39,7 +39,7 @@ public class Navegacion {
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setTitle(stageTitle);
-            stage.getIcons().add(new Image("/com/example/beatbuddy/Icons/logo1.png"));
+            stage.getIcons().add(new Image(Navegacion.class.getResourceAsStream("/com/example/beatbuddy/Icons/logo1.png")));
             stage.setScene(scene);
             stage.initModality(modality);
             stage.show();
