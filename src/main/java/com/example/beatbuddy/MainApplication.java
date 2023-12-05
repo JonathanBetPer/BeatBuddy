@@ -16,7 +16,7 @@ import java.util.LinkedList;
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) {
-        Navegacion.cargarInterfaz(Navegacion.LOGIN, Modality.APPLICATION_MODAL, "Inicio Sesión");
+        Navegacion.cargarInterfaz(Navegacion.PANTALLA, Modality.APPLICATION_MODAL, "Inicio Sesión");
     }
 
     public static void main(String[] args) {

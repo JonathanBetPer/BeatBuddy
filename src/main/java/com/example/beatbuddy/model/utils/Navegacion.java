@@ -28,6 +28,8 @@ public class Navegacion {
     public static final String LOGIN = "LogIn.fxml";
     public static final String REGISTER = "Register.fxml";
     public static final String PANTALLA = "Pantalla.fxml";
+    public static final String LISTACANCIONES = "ListaCanciones.fxml";
+    public static final String LISTAPLAYLISTS = "ListaPlaylists.fxml";
 
 
     public static boolean cargarInterfaz(String interfaz, Modality modality, String stageTitle){
