@@ -20,9 +20,9 @@ public class ListaCancionesController {
     public Button buttonBorrar;
     @FXML
     public Label txtNombrePlaylists;
+    public Button buttonReproducir1;
 
     private Cancion cancionActual;
-
     private PantallaController pantallaController;
 
 
@@ -43,13 +43,7 @@ public class ListaCancionesController {
 
     }
 
-    public void actionBorrar(ActionEvent actionEvent, Playlist playlist, Cancion cancion){
-
-        playlist.eliminarCancion(cancion);
-
-    }
-
-
     public void actionBorrar(ActionEvent actionEvent) {
+        pantallaController.usuario.eliminarCancionPlaylist(pantallaController.playlistActual, cancionActual);
     }
 }

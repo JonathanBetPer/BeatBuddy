@@ -4,54 +4,49 @@ import com.example.beatbuddy.model.Cancion;
 import com.example.beatbuddy.model.Playlist;
 import com.example.beatbuddy.model.Reproductor;
 import com.example.beatbuddy.model.Usuario;
-import com.example.beatbuddy.model.bbdd.Conexion;
+import com.example.beatbuddy.model.bbdd.ConexionMySQL;
 import com.example.beatbuddy.model.bbdd.queries.ConsultaUsuario;
-import com.example.beatbuddy.model.bbdd.queries.ConsultasBeatBuddyUser;
 import com.example.beatbuddy.model.bbdd.queries.ConsultasPlaylist;
 import com.example.beatbuddy.model.utils.Navegacion;
+import com.example.beatbuddy.model.utils.PersistenciaCredenciales;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.SnapshotParameters;
-import javafx.scene.control.Button;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.image.WritableImage;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
-import java.net.URL;
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.ResourceBundle;
 
 
 public class PantallaController {
-
     @FXML
-    public VBox vboxListasPlaylists;
+    private Label labelNombreUsuario;
     @FXML
-    public VBox vboxListasPlaylistsUsuario;
-
-
+    private JFXTextField tfBuscador;
+    @FXML
+    private VBox vboxListasPlaylists;
+    @FXML
+    private VBox vboxListasPlaylistsUsuario;
+    @FXML
+    private Label tfNombreUsuario;
     public Reproductor reproductor;
-    private Playlist playlistActual;
-    private Usuario usuario;
+
+    public Usuario usuario;
+    public Playlist playlistActual;
 
 
 
     public void cargarListaCanciones(Playlist playlistActual) {
         vboxListasPlaylists.getChildren().clear();
 
-        LinkedList<Cancion> listaCanciones = ConsultasPlaylist.getCancionesInPlaylist(Conexion.getConnection(), playlistActual.getID());
+        LinkedList<Cancion> listaCanciones = ConsultasPlaylist.getCancionesInPlaylist(ConexionMySQL.getConnection(), playlistActual.getID());
 
         System.out.println(listaCanciones.size());
         for (int i = 0; i < listaCanciones.size(); i++) {
@@ -74,87 +69,68 @@ public class PantallaController {
 
 
     //
-    public void init(String nombreUsuario, Cancion cancionActual, LinkedList<Cancion> historialCanciones) {
-        this.usuario = ConsultaUsuario.recuperarDatosUsuario(Conexion.getConnection(), nombreUsuario);
-        this.usuario.setListaPlaylists(ConsultaUsuario.getPlaylistsUsuario(Conexion.getConnection(), usuario.getID()));
+    public void init(String nombreUsuario, Cancion cancionActual, LinkedList<Cancion> historialCanciones, Stage stage) {
+        this.usuario = ConsultaUsuario.recuperarDatosUsuario(ConexionMySQL.getConnection(), nombreUsuario);
 
-        playlistActual = null;
+        this.usuario.setListaPlaylists(ConsultaUsuario.getPlaylistsUsuario(ConexionMySQL.getConnection(), usuario.getID()));
+
         reproductor = new Reproductor(cancionActual, historialCanciones);
 
-        LinkedList<Playlist> listaPlaylistBeatBuddy = ConsultasBeatBuddyUser.obtenerListasBeatBuddy(Conexion.getConnection());
+        labelNombreUsuario.setText(usuario.getNombreUsuario());
 
+        cargarListaEnPanel(vboxListasPlaylists, ConsultasPlaylist.obtenerListasBeatBuddy(ConexionMySQL.getConnection()));
+        cargarListaEnPanel(vboxListasPlaylistsUsuario, usuario.getListaPlaylists());
 
-        System.out.println(listaPlaylistBeatBuddy.size());
-        for (int i = 0; i < listaPlaylistBeatBuddy.size(); i++) {
+        stage.setOnCloseRequest(this::handleClose);
+    }
 
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(PantallaController.class.getResource("/com/example/beatbuddy/views/Componentes/ListaPlaylists.fxml"));
+    private void handleClose(WindowEvent event) {
 
-            try{
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmación");
+        alert.setHeaderText("Estás saliendo de la aplicación");
+        alert.setContentText("¿Quieres cerrar la sesión actual?");
+        alert.getButtonTypes().setAll(ButtonType.CANCEL, ButtonType.YES, ButtonType.NO);
+        alert.showAndWait();
 
-                HBox hBox = fxmlLoader.load();
-                ListaPlaylistsController listaPlaylistsController = fxmlLoader.getController();
-                listaPlaylistsController.setData(listaPlaylistBeatBuddy.get(i), this);
-                vboxListasPlaylists.getChildren().add(hBox);
+        if (alert.getResult() == javafx.scene.control.ButtonType.YES) {
 
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-        }
-
-        LinkedList<Playlist> listaPlaylistUsuario = usuario.getListaPlaylists();
-
-
-        System.out.println(listaPlaylistUsuario.size());
-        for (int i = 0; i < listaPlaylistUsuario.size(); i++) {
-
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(PantallaController.class.getResource("/com/example/beatbuddy/views/Componentes/ListaPlaylists.fxml"));
-
-            try{
-
-                HBox hBox = fxmlLoader.load();
-                ListaPlaylistsController listaPlaylistsController = fxmlLoader.getController();
-                listaPlaylistsController.setData(listaPlaylistUsuario.get(i), this);
-                vboxListasPlaylistsUsuario.getChildren().add(hBox);
-
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
+            PersistenciaCredenciales.eliminarDatosPersistentes();
+            Navegacion.cerrarInterfaz(tfBuscador);
+            event.consume();
+        } else if (alert.getResult() == ButtonType.CANCEL) {
+            //No cerrar ventana
+            event.consume();
         }
 
     }
 
-    @FXML
-    public void actionVolverPantallaInicial(ActionEvent actionEvent) {
 
-        vboxListasPlaylists.getChildren().clear();
+    private void cargarListaEnPanel(VBox vbox, LinkedList<Playlist> listaPlaylists) {
+        vbox.getChildren().clear();
 
-        LinkedList<Playlist> listaPlaylist = ConsultasBeatBuddyUser.obtenerListasBeatBuddy(Conexion.getConnection());
-
-        System.out.println(listaPlaylist.size());
-        for (int i = 0; i < listaPlaylist.size(); i++) {
+        System.out.println(listaPlaylists.size());
+        for (int i = 0; i < listaPlaylists.size(); i++) {
 
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(PantallaController.class.getResource("/com/example/beatbuddy/views/Componentes/ListaPlaylists.fxml"));
 
-            try{
+            try {
                 HBox hBox = fxmlLoader.load();
-                hBox.setPrefWidth(vboxListasPlaylistsUsuario.getPrefWidth());
-                hBox.setMinWidth(vboxListasPlaylistsUsuario.getMinWidth());
-                hBox.setMaxWidth(vboxListasPlaylistsUsuario.getMaxWidth());
-
-                ListaPlaylistsController listaPlaylistsController = fxmlLoader.getController();
-                listaPlaylistsController.setData(listaPlaylist.get(i), this);
-                vboxListasPlaylists.getChildren().add(hBox);
+                ListaPlaylistsController controller = fxmlLoader.getController();
+                controller.setData(listaPlaylists.get(i), this);
+                vbox.getChildren().add(hBox);
 
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
         }
+    }
+
+
+    @FXML
+    public void actionVolverPantallaInicial(ActionEvent actionEvent) {
+        cargarListaEnPanel(vboxListasPlaylists, ConsultasPlaylist.obtenerListasBeatBuddy(ConexionMySQL.getConnection()));
     }
 
     @FXML
@@ -169,16 +145,12 @@ public class PantallaController {
 
     @FXML
     public void actionCancionDelante(ActionEvent actionEvent) {
-
         reproductor.avanzarCancion();
-
     }
 
     @FXML
     public void actionCancionAtras(ActionEvent actionEvent) {
-
         reproductor.retrocederCancion();
-
     }
 
     @FXML

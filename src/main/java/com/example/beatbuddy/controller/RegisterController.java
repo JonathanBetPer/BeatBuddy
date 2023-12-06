@@ -1,7 +1,7 @@
 package com.example.beatbuddy.controller;
 
-import com.example.beatbuddy.model.Usuario;
-import com.example.beatbuddy.model.bbdd.Conexion;
+import com.example.beatbuddy.model.bbdd.ConexionMySQL;
+import com.example.beatbuddy.model.bbdd.queries.ConsultaUsuario;
 import com.example.beatbuddy.model.bbdd.queries.ConsultasInicioYRegistro;
 import com.example.beatbuddy.model.utils.Encriptacion;
 import com.example.beatbuddy.model.utils.Navegacion;
@@ -29,11 +29,12 @@ public class RegisterController {
 
 
         if (comprobarCamposVacios()){
-            if (ConsultasInicioYRegistro.comprobarExisteUsuario(Conexion.getConnection(), tfNombreUsuario.getText(), tfCorreoUsuario.getText())){
+            if (ConsultasInicioYRegistro.comprobarExisteUsuario(ConexionMySQL.getConnection(), tfNombreUsuario.getText(), tfCorreoUsuario.getText())){
                 Hash hash = Encriptacion.generarHash(tfContrasenaUsuario.getText());
-/*
-                ConsultasInicioYRegistro.darAltaUsuario(Conexion.getConnection(), tfNombreUsuario.getText(), tfNombreCompleto.getText(), tfCorreoUsuario.getText(), hash.getSalt(), hash.getResult());
-*/
+
+
+                ConsultaUsuario.darAltaUsuario(ConexionMySQL.getConnection(), tfNombreUsuario.getText(), tfNombreCompleto.getText(), tfCorreoUsuario.getText(), hash.getResult());
+
 
             }
         }
@@ -66,12 +67,6 @@ public class RegisterController {
     private void accederInterfazLogIn(ActionEvent actionEvent){
 
         Navegacion.cargarInterfaz(Navegacion.LOGIN, Modality.APPLICATION_MODAL);
-        Navegacion.cerrarInterfaz(actionEvent);
-
-    }
-    private void accederInterfazPantalla(ActionEvent actionEvent){
-
-        Navegacion.cargarInterfaz(Navegacion.PANTALLA, Modality.APPLICATION_MODAL);
         Navegacion.cerrarInterfaz(actionEvent);
 
     }

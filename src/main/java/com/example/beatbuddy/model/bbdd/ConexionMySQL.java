@@ -1,19 +1,17 @@
 package com.example.beatbuddy.model.bbdd;
 
-import java.net.URL;
 import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Conexion {
+public class ConexionMySQL {
 
     private static Connection connection;
     private final String usuario;
     private final String password;
     private final String url;
 
-    public Conexion(String URL, String usuario, String contrasena) {
+    public ConexionMySQL(String URL, String usuario, String contrasena) {
         this.url = "jdbc:mysql://" + URL;
         this.password = contrasena;
         this.usuario = usuario;

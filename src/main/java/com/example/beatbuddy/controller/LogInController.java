@@ -1,10 +1,12 @@
 package com.example.beatbuddy.controller;
 
-import com.example.beatbuddy.model.bbdd.Conexion;
+import com.example.beatbuddy.model.bbdd.ConexionMySQL;
 import com.example.beatbuddy.model.bbdd.queries.ConsultasInicioYRegistro;
 import com.example.beatbuddy.model.utils.Encriptacion;
 import com.example.beatbuddy.model.utils.Navegacion;
+import com.example.beatbuddy.model.utils.PersistenciaCredenciales;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
@@ -16,24 +18,26 @@ import javafx.stage.Modality;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LogInController implements Initializable {
+public class LogInController {
+
     @FXML
-    public JFXButton botonIniciarSesion;
+    private JFXButton botonIniciarSesion;
     @FXML
-    public JFXTextField tfnombreUsuario;
+    private JFXTextField tfnombreUsuario;
     @FXML
-    public JFXPasswordField tfContrasenaUsuario;
+    private JFXPasswordField tfContrasenaUsuario;
+
+    @FXML
+    private JFXCheckBox mantenerSesion;
 
 
     @FXML
     public void actionBotonIniciarSesion(ActionEvent actionEvent) {
 
        if (comprobarCamposVacios()){
-            if (ConsultasInicioYRegistro.comprobarExisteUsuario(Conexion.getConnection(), tfnombreUsuario.getText(), tfnombreUsuario.getText())){
+            if (ConsultasInicioYRegistro.comprobarExisteUsuario(ConexionMySQL.getConnection(), tfnombreUsuario.getText(), tfnombreUsuario.getText())){
 
-                System.out.println(tfContrasenaUsuario.getText());
-                String hastResult = ConsultasInicioYRegistro.recuperarContrasena(Conexion.getConnection(), tfnombreUsuario.getText(), tfnombreUsuario.getText());
-                System.out.println(hastResult);
+                String hastResult = ConsultasInicioYRegistro.recuperarContrasena(ConexionMySQL.getConnection(), tfnombreUsuario.getText(), tfnombreUsuario.getText());
 
                 if (Encriptacion.comprobarPasswd(hastResult, tfContrasenaUsuario.getText())){
                     accederInterfazPrincipal(actionEvent);
@@ -43,7 +47,6 @@ public class LogInController implements Initializable {
 
             }else {
                 generarAlerta("NO EXISTE", "EL USUARIO O CORREO INTRODUCIDO NO EXISTE", Alert.AlertType.ERROR);
-
             }
 
         }
@@ -64,6 +67,10 @@ public class LogInController implements Initializable {
 
     private void accederInterfazPrincipal(ActionEvent actionEvent){
 
+
+        if (mantenerSesion.isSelected()){
+            PersistenciaCredenciales.guardarCredenciales(tfnombreUsuario.getText(), tfContrasenaUsuario.getText());
+        }
 
         Navegacion.cargarInterfazPrincipal(tfnombreUsuario.getText(), null, null);
         Navegacion.cerrarInterfaz(actionEvent);
@@ -90,9 +97,4 @@ public class LogInController implements Initializable {
         alert.showAndWait();
     }
 
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
 }

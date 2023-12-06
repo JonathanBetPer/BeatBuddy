@@ -4,17 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d8bebf0-fee1-49e0-b460-9c66f34390a2" name="Changes" comment="">
+    <list default="true" id="5d8bebf0-fee1-49e0-b460-9c66f34390a2" name="Changes" comment="Cambios menores controladores y Navegacion&#10;Creacion PersistenciaCredenciales&#10;Creacion BBDD local SQLite">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/f43104b6-ef68-49d6-b545-350339d513eb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f43104b6-ef68-49d6-b545-350339d513eb.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/MainApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/CrearPlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/CrearPlaylistController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/ListaCancionesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/ListaCancionesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/ListaPlaylistsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/ListaPlaylistsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/LogInController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/PantallaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/PantallaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Cancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Cancion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/Conexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/ConexionMySQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultaUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultaUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultasBeatBuddyUser.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultasPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultasPlaylist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/utils/Navegacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/utils/Navegacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/utils/PersistenciaCredenciales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/utils/PersistenciaCredenciales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/LogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/LogIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/Pantalla.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/Pantalla.fxml" afterDir="false" />
     </list>
     <list id="d5717de9-ae7e-4845-b50c-2e4c12af8697" name="Changes by 2dam" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +49,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -54,6 +68,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/yonip/Documents/2DAM/DAD/UT2/Tareas/MinijuegoPeleas&quot;,
@@ -69,7 +84,11 @@
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+      &quot;mysql&quot;,
+      &quot;sqlite&quot;
+    ],
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;SQLite&quot;
     ]
   }
 }</component>
@@ -111,6 +130,9 @@
       <workItem from="1701728818201" duration="305000" />
       <workItem from="1701735624523" duration="1605000" />
       <workItem from="1701774277115" duration="1308000" />
+      <workItem from="1701829825085" duration="956000" />
+      <workItem from="1701865682526" duration="13773000" />
+      <workItem from="1701896882535" duration="93000" />
     </task>
     <servers />
   </component>
@@ -120,17 +142,6 @@
   <component name="UnknownFeatures">
     <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
     <option featureType="dependencySupport" implementationName="java:org.openjfx:javafx-base" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -60,13 +60,14 @@ public class Navegacion {
         FXMLLoader fxmlLoader = new FXMLLoader(Navegacion.class.getResource(RUTA+PANTALLA));
         try {
             Parent root = fxmlLoader.load();
-            PantallaController pantallaController = fxmlLoader.getController();
-            pantallaController.init(nombreUsuario, cancionActual, historialCanciones);
+
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setTitle(tituloVentana);
             stage.getIcons().add(new Image(Navegacion.class.getResourceAsStream("/com/example/beatbuddy/Icons/logo1.png")));
             stage.setScene(scene);
+            PantallaController pantallaController = fxmlLoader.getController();
+            pantallaController.init(nombreUsuario, cancionActual, historialCanciones, stage);
             stage.show();
             return true;
         } catch (IOException e) {

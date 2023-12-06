@@ -8,17 +8,12 @@
       <jdbc-url>jdbc:mysql://192.168.1.48:3306</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="persitenciaBeadBuddydb" uuid="ee62fbb5-0e32-4406-ba6c-a1836dd92161">
+    <data-source source="LOCAL" name="persitenciaBeadBuddy.db" uuid="5e7db85e-14b5-4ed3-8166-ee605b553797">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\yonip\Documents\BeatBuddy\src\main\resources\com\example\beatbuddy\files\persitenciaBeadBuddydb</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/files/persitenciaBeadBuddy.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
-      <libraries>
-        <library>
-          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.43.0/org/xerial/sqlite-jdbc/3.43.0.0/sqlite-jdbc-3.43.0.0.jar</url>
-        </library>
-      </libraries>
     </data-source>
   </component>
 </project>

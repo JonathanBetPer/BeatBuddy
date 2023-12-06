@@ -1,13 +1,14 @@
 package com.example.beatbuddy.model;
 
 import java.io.File;
+import java.io.Serial;
+import java.io.Serializable;
 
 public class Cancion {
 
     private int ID;
     private String nombre;
     private String autor;
-
     private String letra;
     private File archivo;
 

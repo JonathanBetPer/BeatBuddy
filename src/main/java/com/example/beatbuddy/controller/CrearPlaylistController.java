@@ -2,8 +2,7 @@ package com.example.beatbuddy.controller;
 
 import com.example.beatbuddy.model.Playlist;
 import com.example.beatbuddy.model.Usuario;
-import com.example.beatbuddy.model.bbdd.Conexion;
-import com.example.beatbuddy.model.bbdd.queries.ConsultaUsuario;
+import com.example.beatbuddy.model.bbdd.ConexionMySQL;
 import com.example.beatbuddy.model.bbdd.queries.ConsultasPlaylist;
 import com.example.beatbuddy.model.utils.Navegacion;
 import com.jfoenix.controls.JFXTextField;
@@ -12,7 +11,6 @@ import javafx.event.ActionEvent;
 public class CrearPlaylistController {
     public JFXTextField tfNombrePlaylist;
     public JFXTextField tfDescripcionPlaylist;
-
     private Usuario usuario;
 
     public void actionCrearPlaylist(ActionEvent actionEvent) {
@@ -20,7 +18,7 @@ public class CrearPlaylistController {
         if (ComprobarCamposVacios()){
 
             Playlist playlist = new Playlist(tfNombrePlaylist.getText(), tfDescripcionPlaylist.getText());
-            ConsultasPlaylist.setPlaylist(Conexion.getConnection(), usuario.getID(), playlist);
+            ConsultasPlaylist.setPlaylist(ConexionMySQL.getConnection(), usuario.getID(), playlist);
             Navegacion.cerrarInterfaz(actionEvent);
         }
 

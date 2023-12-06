@@ -10,6 +10,24 @@ import java.util.LinkedList;
 
 public class ConsultasPlaylist {
 
+    public static LinkedList<Playlist> obtenerListasBeatBuddy(Connection connection){
+        LinkedList<Playlist> listasPlaylist = new LinkedList<>();
+        try {
+            PreparedStatement sentenciaSQL = connection.prepareStatement("SELECT ID FROM BeatBuddy.PLAYLISTS WHERE idUsuario = (SELECT ID from BeatBuddy.USUARIOS WHERE nombreUsuario = 'BeatBuddyApp')");
+            ResultSet resultadoSQL = sentenciaSQL.executeQuery();
+
+            while (resultadoSQL.next()) {
+                listasPlaylist.add(ConsultasPlaylist.getPlaylist(connection, resultadoSQL.getInt("ID")));
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listasPlaylist;
+    }
+
     public static Playlist getPlaylist(Connection connection,  int idPlaylist) {
         Playlist playlist = null;
 

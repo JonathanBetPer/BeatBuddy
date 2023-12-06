@@ -2,8 +2,6 @@ package com.example.beatbuddy.model.bbdd.queries;
 
 import com.example.beatbuddy.model.Playlist;
 import com.example.beatbuddy.model.Usuario;
-import com.password4j.Hash;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -13,7 +11,7 @@ import java.util.LinkedList;
 
 public class ConsultaUsuario {
 
-    public static void darAltaUsuario(Connection connection, String nombreUsuario, String nombreCompleto, String correo, String hashResult, String salt){
+    public static void darAltaUsuario(Connection connection, String nombreUsuario, String nombreCompleto, String correo, String hashResult){
 
         try {
             PreparedStatement sentenciaSQLUsuario = connection.prepareStatement("insert into BeatBuddy.USUARIOS(ID, nombre, nombreUsuario, email) values(default, ?, ?, ?)");
@@ -22,9 +20,8 @@ public class ConsultaUsuario {
             sentenciaSQLUsuario.setString(3, correo);
             sentenciaSQLUsuario.executeUpdate();
 
-            PreparedStatement sentenciaSQLContrasena = connection.prepareStatement("insert into BeatBuddy.CONTRASENAS(ID, hashResult, salt) values(1, ?, ?)");
+            PreparedStatement sentenciaSQLContrasena = connection.prepareStatement("insert into BeatBuddy.CONTRASENAS(ID, hashResult) values(default, ?)");
             sentenciaSQLContrasena.setString(1, hashResult);
-            sentenciaSQLContrasena.setString(2, salt);
             sentenciaSQLContrasena.executeUpdate();
 
         } catch (SQLException e) {

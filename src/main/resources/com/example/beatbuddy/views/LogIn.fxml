@@ -37,7 +37,7 @@
             <Insets bottom="5.0" left="75.0" right="75.0" top="20.0" />
          </VBox.margin>
       </JFXButton>
-      <JFXCheckBox checkedColor="#9c109a" text="Mantener sesión inicidada">
+      <JFXCheckBox fx:id="mantenerSesion" checkedColor="#9c109a" text="Mantener sesión inicidada">
          <VBox.margin>
             <Insets bottom="20.0" left="55.0" right="55.0" top="20.0" />
          </VBox.margin>
