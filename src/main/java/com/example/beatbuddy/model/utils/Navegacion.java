@@ -1,7 +1,9 @@
 package com.example.beatbuddy.model.utils;
 
+import com.example.beatbuddy.controller.CrearPlaylistController;
 import com.example.beatbuddy.controller.PantallaController;
 import com.example.beatbuddy.model.Cancion;
+import com.example.beatbuddy.model.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -60,6 +62,25 @@ public class Navegacion {
             Parent root = fxmlLoader.load();
             PantallaController pantallaController = fxmlLoader.getController();
             pantallaController.init(nombreUsuario, cancionActual, historialCanciones);
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setTitle(tituloVentana);
+            stage.getIcons().add(new Image(Navegacion.class.getResourceAsStream("/com/example/beatbuddy/Icons/logo1.png")));
+            stage.setScene(scene);
+            stage.show();
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static boolean cargarCrearPlaylist(Usuario usuario){
+        FXMLLoader fxmlLoader = new FXMLLoader(Navegacion.class.getResource(RUTA+CREARPLAYLIST));
+        try {
+            Parent root = fxmlLoader.load();
+            CrearPlaylistController crearPlaylistController = fxmlLoader.getController();
+            crearPlaylistController.init(usuario);
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setTitle(tituloVentana);

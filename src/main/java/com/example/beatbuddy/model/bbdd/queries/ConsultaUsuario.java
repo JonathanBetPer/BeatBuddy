@@ -1,5 +1,6 @@
 package com.example.beatbuddy.model.bbdd.queries;
 
+import com.example.beatbuddy.model.Playlist;
 import com.example.beatbuddy.model.Usuario;
 import com.password4j.Hash;
 
@@ -8,6 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
+import java.util.LinkedList;
 
 public class ConsultaUsuario {
 
@@ -36,20 +38,41 @@ public class ConsultaUsuario {
         try {
             PreparedStatement sentenciaSQL = connection.prepareStatement("SELECT ID, nombre, nombreUsuario, email, imagen FROM BeatBuddy.USUARIOS where nombreUsuario =  ? or email = ?");
             sentenciaSQL.setString(1, nombreUsuario);
+            sentenciaSQL.setString(2, nombreUsuario);
             ResultSet resultadoSQL = sentenciaSQL.executeQuery();
 
-            usuarioActual = new Usuario(
-                    resultadoSQL.getInt("ID"),
-                    resultadoSQL.getString("nombre"),
-                    resultadoSQL.getString("nombreUsuario"),
-                    resultadoSQL.getString("correo"),
-                    blobToFile(resultadoSQL.getBlob("imagen"))
-            );
+            while (resultadoSQL.next()) {
+                usuarioActual = new Usuario(
+                        resultadoSQL.getInt("ID"),
+                        resultadoSQL.getString("nombre"),
+                        resultadoSQL.getString("nombreUsuario"),
+                        resultadoSQL.getString("email"), null);
+            }
+/*                    blobToFile(resultadoSQL.getBlob("imagen"))*/
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return usuarioActual;
+    }
+    public static LinkedList<Playlist> getPlaylistsUsuario(Connection connection, int idUsuario) {
+        LinkedList<Playlist> listaPlaylist = new LinkedList<>();
+
+        try {
+            PreparedStatement sentenciaSQL = connection.prepareStatement("SELECT ID FROM BeatBuddy.PLAYLISTS WHERE idUsuario = ?");
+            sentenciaSQL.setInt(1, idUsuario);
+
+            ResultSet resultadoSQL = sentenciaSQL.executeQuery();
+
+            while (resultadoSQL.next()) {
+                listaPlaylist.add(ConsultasPlaylist.getPlaylist(connection, resultadoSQL.getInt("ID")));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listaPlaylist;
     }
 
 

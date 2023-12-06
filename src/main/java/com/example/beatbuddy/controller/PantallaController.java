@@ -8,6 +8,7 @@ import com.example.beatbuddy.model.bbdd.Conexion;
 import com.example.beatbuddy.model.bbdd.queries.ConsultaUsuario;
 import com.example.beatbuddy.model.bbdd.queries.ConsultasBeatBuddyUser;
 import com.example.beatbuddy.model.bbdd.queries.ConsultasPlaylist;
+import com.example.beatbuddy.model.utils.Navegacion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,6 +24,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Modality;
 
 import java.io.IOException;
 import java.net.URL;
@@ -73,8 +75,8 @@ public class PantallaController {
 
     //
     public void init(String nombreUsuario, Cancion cancionActual, LinkedList<Cancion> historialCanciones) {
-
         this.usuario = ConsultaUsuario.recuperarDatosUsuario(Conexion.getConnection(), nombreUsuario);
+        this.usuario.setListaPlaylists(ConsultaUsuario.getPlaylistsUsuario(Conexion.getConnection(), usuario.getID()));
 
         playlistActual = null;
         reproductor = new Reproductor(cancionActual, historialCanciones);
@@ -101,7 +103,7 @@ public class PantallaController {
 
         }
 
-        LinkedList<Playlist> listaPlaylistUsuario = ConsultasBeatBuddyUser.obtenerListasBeatBuddy(Conexion.getConnection());
+        LinkedList<Playlist> listaPlaylistUsuario = usuario.getListaPlaylists();
 
 
         System.out.println(listaPlaylistUsuario.size());
@@ -140,6 +142,10 @@ public class PantallaController {
 
             try{
                 HBox hBox = fxmlLoader.load();
+                hBox.setPrefWidth(vboxListasPlaylistsUsuario.getPrefWidth());
+                hBox.setMinWidth(vboxListasPlaylistsUsuario.getMinWidth());
+                hBox.setMaxWidth(vboxListasPlaylistsUsuario.getMaxWidth());
+
                 ListaPlaylistsController listaPlaylistsController = fxmlLoader.getController();
                 listaPlaylistsController.setData(listaPlaylist.get(i), this);
                 vboxListasPlaylists.getChildren().add(hBox);
@@ -171,10 +177,13 @@ public class PantallaController {
     @FXML
     public void actionCancionAtras(ActionEvent actionEvent) {
 
+        reproductor.retrocederCancion();
 
     }
 
     @FXML
     public void actionCrearPlaylist(ActionEvent actionEvent) {
+        Navegacion.cerrarInterfaz(actionEvent);
+        Navegacion.cargarCrearPlaylist(usuario);
     }
 }

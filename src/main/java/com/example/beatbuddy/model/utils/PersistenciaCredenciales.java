@@ -1,10 +1,11 @@
+
 package com.example.beatbuddy.model.utils;
 
 import java.sql.*;
 
 
 public class PersistenciaCredenciales {
-
+/*
     private static class Conexion {
 
         private static Connection connection;
@@ -72,5 +73,6 @@ public class PersistenciaCredenciales {
         Conexion.close();
         return false;
     }
-
+*/
 }
+

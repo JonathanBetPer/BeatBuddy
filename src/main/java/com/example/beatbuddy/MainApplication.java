@@ -25,8 +25,8 @@ public class MainApplication extends Application {
         new Conexion("yoni13ja.ddns.net:13306/BeatBuddy", "beatbuddy", "BeatBuddy@133").iniciar();
 
 
-        PersistenciaCredenciales.guardarCredenciales("yoni13ja", "BeatBuddy@133");
-        System.out.println(PersistenciaCredenciales.comprobarExistenCredenciales());
-        //launch();
+/*        PersistenciaCredenciales.guardarCredenciales("yoni13ja", "BeatBuddy@133");
+        System.out.println(PersistenciaCredenciales.comprobarExistenCredenciales());*/
+        launch();
     }
 }

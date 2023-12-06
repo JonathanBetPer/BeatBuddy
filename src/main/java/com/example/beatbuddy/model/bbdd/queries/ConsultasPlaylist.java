@@ -38,6 +38,22 @@ public class ConsultasPlaylist {
         return playlist;
     }
 
+    public static void setPlaylist(Connection connection,  int idUsuario, Playlist playlist) {
+
+        try {
+            PreparedStatement sentenciaSQL = connection.prepareStatement("insert into BeatBuddy.PLAYLISTS(ID, nombre, descripcion, idUsuario) values(default, ?, ?, ?)");
+            sentenciaSQL.setString(1, playlist.getNombre());
+            sentenciaSQL.setString(2, playlist.getDescripcion());
+            sentenciaSQL.setInt(3, idUsuario);
+
+            sentenciaSQL.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public static LinkedList<Cancion> getCancionesInPlaylist(Connection connection, int idPlaylist){
         LinkedList<Cancion> lista = new LinkedList<>();
 
