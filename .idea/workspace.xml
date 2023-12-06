@@ -5,23 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d8bebf0-fee1-49e0-b460-9c66f34390a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/CrearPlaylistController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/CrearPlaylist.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f43104b6-ef68-49d6-b545-350339d513eb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f43104b6-ef68-49d6-b545-350339d513eb.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f43104b6-ef68-49d6-b545-350339d513eb/storage_v2/_src_/schema/BeatBuddy.kLCCCg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f43104b6-ef68-49d6-b545-350339d513eb/storage_v2/_src_/schema/BeatBuddy.kLCCCg.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/ListaCancionesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/ListaCancionesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/ListaPlaylistsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/ListaPlaylistsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/CrearPlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/CrearPlaylistController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/LogInController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/PantallaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/PantallaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Playlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Reproductor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Reproductor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/RegisterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultaUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultaUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultasPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultasPlaylist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultasInicioYRegistro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultasInicioYRegistro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/utils/Encriptacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/utils/Encriptacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/utils/Navegacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/utils/Navegacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/Componentes/ListaCanciones.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/Componentes/ListaCanciones.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/Componentes/ListaPlaylists.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/Componentes/ListaPlaylists.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/LogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/LogIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/Pantalla.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/Pantalla.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/utils/PersistenciaCredenciales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/utils/PersistenciaCredenciales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/files/credenciales.props" beforeDir="false" />
     </list>
     <list id="d5717de9-ae7e-4845-b50c-2e4c12af8697" name="Changes by 2dam" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,32 +54,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "openjdk-21",
-    "last_opened_file_path": "C:/Users/yonip/Documents/2DAM/DAD/UT2/Tareas/MinijuegoPeleas",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "CodeWithMe",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yonip/Documents/2DAM/DAD/UT2/Tareas/MinijuegoPeleas&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CodeWithMe&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\2dam\IdeaProjects\BeatBuddy\src\main\resources\com\example\beatbuddy\files" />
@@ -118,6 +119,7 @@
       <workItem from="1701728818201" duration="305000" />
       <workItem from="1701735624523" duration="1605000" />
       <workItem from="1701774277115" duration="1308000" />
+      <workItem from="1701829825085" duration="956000" />
     </task>
     <servers />
   </component>

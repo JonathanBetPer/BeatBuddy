@@ -32,20 +32,19 @@ import java.util.LinkedList;
 import java.util.ResourceBundle;
 
 
-public class PantallaController implements Initializable {
+public class PantallaController {
 
-    @FXML
-    public ImageView myImageView;
     @FXML
     public VBox vboxListasPlaylists;
-
-    public Reproductor reproductor;
-
-    public Playlist playlistActual;
     @FXML
     public VBox vboxListasPlaylistsUsuario;
 
+
+    public Reproductor reproductor;
+    private Playlist playlistActual;
     private Usuario usuario;
+
+
 
     public void cargarListaCanciones(Playlist playlistActual) {
         vboxListasPlaylists.getChildren().clear();
@@ -73,12 +72,12 @@ public class PantallaController implements Initializable {
 
 
     //
-    public void init(int idUsuario) {
+    public void init(String nombreUsuario, Cancion cancionActual, LinkedList<Cancion> historialCanciones) {
 
-        this.usuario = ConsultaUsuario.recuperarDatosYUsuario(Conexion.getConnection(), idUsuario);
+        this.usuario = ConsultaUsuario.recuperarDatosUsuario(Conexion.getConnection(), nombreUsuario);
 
         playlistActual = null;
-        reproductor = new Reproductor(null, null);
+        reproductor = new Reproductor(cancionActual, historialCanciones);
 
         LinkedList<Playlist> listaPlaylistBeatBuddy = ConsultasBeatBuddyUser.obtenerListasBeatBuddy(Conexion.getConnection());
 
@@ -126,11 +125,7 @@ public class PantallaController implements Initializable {
 
     }
 
-
-
-    public PantallaController() {
-    }
-
+    @FXML
     public void actionVolverPantallaInicial(ActionEvent actionEvent) {
 
         vboxListasPlaylists.getChildren().clear();
@@ -156,6 +151,7 @@ public class PantallaController implements Initializable {
         }
     }
 
+    @FXML
     public void actionPararOContinuar(ActionEvent actionEvent) {
 
         if (reproductor.estaReproduciendo()) {
@@ -163,20 +159,22 @@ public class PantallaController implements Initializable {
         } else {
             reproductor.continuar();
         }
-
     }
 
+    @FXML
     public void actionCancionDelante(ActionEvent actionEvent) {
 
         reproductor.avanzarCancion();
 
     }
 
+    @FXML
     public void actionCancionAtras(ActionEvent actionEvent) {
 
 
     }
 
+    @FXML
     public void actionCrearPlaylist(ActionEvent actionEvent) {
     }
 }

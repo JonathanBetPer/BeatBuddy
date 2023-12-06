@@ -9,36 +9,44 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
 import javafx.stage.Modality;
 
-public class LogInController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class LogInController implements Initializable {
     @FXML
     public JFXButton botonIniciarSesion;
     @FXML
     public JFXTextField tfnombreUsuario;
     @FXML
     public JFXPasswordField tfContrasenaUsuario;
-    @FXML
-    private Label welcomeText;
+
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("");
-    }
-
     public void actionBotonIniciarSesion(ActionEvent actionEvent) {
-        accederInterfazPrincipal(actionEvent);
-/*        if (comprobarCamposVacios()){
-            if (ConsultasInicioYRegistro.comprobarExisteUsuario(Conexion.getConnection(), tfnombreUsuario.getText(), tfnombreUsuario.getText())){
-                String [] contrasena = ConsultasInicioYRegistro.recuperarContrasena(Conexion.getConnection(), tfnombreUsuario.getText(), tfnombreUsuario.getText());
-                if (Encriptacion.comprobarPasswd(contrasena[0], contrasena[1], tfContrasenaUsuario.getText())){
-                    accederInterfazPrincipal(actionEvent);
 
-                } generarAlerta("DATOS ERRÓNEOS", "CONTRASEÑA INCORRECTA, VUELVE A INTENTARLO", Alert.AlertType.ERROR);
-            } generarAlerta("NO EXISTE", "EL USUARIO O CORREO INTRODUCIDO NO EXISTE", Alert.AlertType.ERROR);
-        }*/
+       if (comprobarCamposVacios()){
+            if (ConsultasInicioYRegistro.comprobarExisteUsuario(Conexion.getConnection(), tfnombreUsuario.getText(), tfnombreUsuario.getText())){
+
+                System.out.println(tfContrasenaUsuario.getText());
+                String hastResult = ConsultasInicioYRegistro.recuperarContrasena(Conexion.getConnection(), tfnombreUsuario.getText(), tfnombreUsuario.getText());
+                System.out.println(hastResult);
+
+                if (Encriptacion.comprobarPasswd(hastResult, tfContrasenaUsuario.getText())){
+                    accederInterfazPrincipal(actionEvent);
+                } else {
+                    generarAlerta("DATOS ERRÓNEOS", "CONTRASEÑA INCORRECTA, VUELVE A INTENTARLO", Alert.AlertType.ERROR);
+                }
+
+            }else {
+                generarAlerta("NO EXISTE", "EL USUARIO O CORREO INTRODUCIDO NO EXISTE", Alert.AlertType.ERROR);
+
+            }
+
+        }
     }
 
     public void actionRegistrarse(ActionEvent actionEvent) {
@@ -49,14 +57,15 @@ public class LogInController {
 
     private void accederInterfazRegister(ActionEvent actionEvent){
 
-        Navegacion.cargarInterfaz(Navegacion.REGISTER, Modality.APPLICATION_MODAL, "Register");
+        Navegacion.cargarInterfaz(Navegacion.REGISTER, Modality.APPLICATION_MODAL);
         Navegacion.cerrarInterfaz(actionEvent);
 
     }
 
     private void accederInterfazPrincipal(ActionEvent actionEvent){
 
-        Navegacion.cargarInterfaz(Navegacion.PANTALLA, Modality.APPLICATION_MODAL, "BeatBuddy🎵");
+
+        Navegacion.cargarInterfazPrincipal(tfnombreUsuario.getText(), null, null);
         Navegacion.cerrarInterfaz(actionEvent);
 
 
@@ -82,5 +91,8 @@ public class LogInController {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
 }

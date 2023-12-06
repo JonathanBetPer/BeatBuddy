@@ -65,13 +65,13 @@ public class RegisterController {
 
     private void accederInterfazLogIn(ActionEvent actionEvent){
 
-        Navegacion.cargarInterfaz(Navegacion.LOGIN, Modality.APPLICATION_MODAL, "Register");
+        Navegacion.cargarInterfaz(Navegacion.LOGIN, Modality.APPLICATION_MODAL);
         Navegacion.cerrarInterfaz(actionEvent);
 
     }
     private void accederInterfazPantalla(ActionEvent actionEvent){
 
-        Navegacion.cargarInterfaz(Navegacion.PANTALLA, Modality.APPLICATION_MODAL, "BeatBuddy🎵");
+        Navegacion.cargarInterfaz(Navegacion.PANTALLA, Modality.APPLICATION_MODAL);
         Navegacion.cerrarInterfaz(actionEvent);
 
     }

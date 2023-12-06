@@ -1,56 +1,76 @@
 package com.example.beatbuddy.model.utils;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.sql.*;
-import java.util.Properties;
+
 
 public class PersistenciaCredenciales {
 
-    private static Properties properties = new Properties();
-    private static File archivo = new File("/com/example/beatbuddy/files/credenciales.props");
+    private static class Conexion {
 
-    public static boolean hayCredenciales(){
-        loadProperties();
-        return !properties.getProperty("user").equals("") && !properties.getProperty("password").equals("");
-    }
+        private static Connection connection;
+        private final String url;
 
-    public static String[] recuperarCredenciales(){
-        return new String[] {
-            properties.getProperty("user"),
-            properties.getProperty("password")
-        };
-    }
+        public Conexion() {
+            this.url = "jdbc:sqlite:" + "/com/example/beatbuddy/files/persitenciaBeadBuddydb";
+        }
 
-    public static void guardarCredenciales(String usuario, String contrasena){
-        properties.setProperty("user", usuario);
-        properties.setProperty("password", contrasena);
-        storeProperties();
-    }
+        public static Connection getConnection() {
+            return connection;
+        }
 
-    public static void eliminarCredenciales(){
-        properties.setProperty("user", "");
-        properties.setProperty("password", "");
-        storeProperties();
-    }
+        public void iniciar() {
+            try {
+                connection = DriverManager.getConnection(url);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
 
-
-    private static void storeProperties(){
-        try {
-            properties.store(new FileOutputStream(archivo), "Credenciales");
-
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
+        public static void close(){
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
-    private static void loadProperties(){
+    public static void guardarCredenciales(String nombreUsuario, String contrasena) {
+        Conexion conexion = new Conexion();
+        conexion.iniciar();
+
         try {
-            properties.load(new FileInputStream(archivo));
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
+            PreparedStatement sentenciaSQLUsuario = conexion.getConnection().prepareStatement(
+                    "INSERT INTO Usuarios (nombreUsuario, passwd) VALUES (?, ?)");
+            sentenciaSQLUsuario.setString(1, nombreUsuario);
+            sentenciaSQLUsuario.setString(2, contrasena);
+            sentenciaSQLUsuario.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+
+        conexion.close();
     }
+
+    public static boolean comprobarExistenCredenciales() {
+         new Conexion().iniciar();
+
+        try {
+            PreparedStatement sentenciaSQLUsuario = Conexion.getConnection().prepareStatement(
+                    "SELECT nombreUsuario, passwd FROM Usuarios");
+            ResultSet resultadoSQL = sentenciaSQLUsuario.executeQuery();
+            while (resultadoSQL.next()) {
+                return true;
+            }
+            sentenciaSQLUsuario.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        Conexion.close();
+        return false;
+    }
+
 }

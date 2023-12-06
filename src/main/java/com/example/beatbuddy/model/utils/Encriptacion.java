@@ -18,14 +18,13 @@ public class Encriptacion {
      * Genera el hash de una contraseña con pimienta y retorna su resultad
      */
     public static Hash generarHash(String passwd){
-        return Password.hash(passwd).addRandomSalt(33).addPepper(pimienta).withArgon2();
+        return Password.hash(passwd).addPepper(pimienta).withArgon2();
     }
 
     /**
-
      * Coomprueba que el resultado de un hash con pimienta coincida con una contraseña
      */
-    public static boolean comprobarPasswd(String hashResult, String Sal, String passwd){
-        return Password.check(passwd,hashResult).addSalt(Sal).addPepper(pimienta).withArgon2();
+    public static boolean comprobarPasswd(String hashResult, String passwd){
+        return Password.check(passwd,hashResult).addPepper(pimienta).withArgon2();
     }
 }
