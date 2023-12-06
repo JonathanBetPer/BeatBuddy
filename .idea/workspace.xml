@@ -5,16 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d8bebf0-fee1-49e0-b460-9c66f34390a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/ListaPlaylistsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f43104b6-ef68-49d6-b545-350339d513eb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f43104b6-ef68-49d6-b545-350339d513eb.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/CrearPlaylistController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/CrearPlaylist.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/MainApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/ListaCancionesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/ListaCancionesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/ListaPlaylistsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/ListaPlaylistsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/LogInController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/PantallaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/controller/PantallaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultasBeatBuddyUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultasBeatBuddyUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Playlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Reproductor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Reproductor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultaUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultaUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultasPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/bbdd/queries/ConsultasPlaylist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/utils/Navegacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beatbuddy/model/utils/Navegacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/Componentes/ListaCanciones.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/Componentes/ListaCanciones.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/Componentes/ListaPlaylists.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/Componentes/ListaPlaylists.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/LogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/LogIn.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/Pantalla.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/beatbuddy/views/Pantalla.fxml" afterDir="false" />
     </list>
     <list id="d5717de9-ae7e-4845-b50c-2e4c12af8697" name="Changes by 2dam" comment="" />

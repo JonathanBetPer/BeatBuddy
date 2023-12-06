@@ -4,14 +4,14 @@ import java.io.File;
 import java.util.LinkedList;
 
 public class Usuario {
-    private String ID;
+    private int ID;
     private String nombreUsuario;
     private String nombre;
     private String correo;
     private File imagen;
     private LinkedList<Playlist> listaPlaylists;
 
-    public Usuario(String ID, String nombreUsuario, String nombre, String correo, File imagen) {
+    public Usuario(int ID, String nombreUsuario, String nombre, String correo, File imagen) {
         this.ID = ID;
         this.nombreUsuario = nombreUsuario;
         this.nombre = nombre;
@@ -20,11 +20,11 @@ public class Usuario {
         this.listaPlaylists = new LinkedList<>();
     }
 
-    public String getID() {
+    public int getID() {
         return ID;
     }
 
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 

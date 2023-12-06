@@ -29,12 +29,12 @@ public class ConsultaUsuario {
         }
     }
 
-    public static Usuario recuperarDatosYUsuario(Connection connection, String ID){
+    public static Usuario recuperarDatosYUsuario(Connection connection, int ID){
         Usuario usuarioActual = null;
 
         try {
             PreparedStatement sentenciaSQL = connection.prepareStatement("SELECT nombre, nombreUsuario, email, imagen FROM BeatBuddy.USUARIOS where ID =  ?");
-            sentenciaSQL.setString(1, ID);
+            sentenciaSQL.setInt(1, ID);
             ResultSet resultadoSQL = sentenciaSQL.executeQuery();
 
             usuarioActual = new Usuario(

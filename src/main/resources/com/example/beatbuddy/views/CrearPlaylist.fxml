@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="161.0" prefWidth="600.0" stylesheets="@../files/css.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.beatbuddy.controller.CrearPlaylistController">
+   <children>
+      <Label layoutX="35.0" layoutY="45.0" text="Nombre" />
+      <Label layoutX="35.0" layoutY="83.0" text="Decripcion" />
+      <JFXTextField fx:id="tfNombrePlaylist" layoutX="102.0" layoutY="41.0" prefHeight="25.0" prefWidth="171.0" />
+      <JFXTextField fx:id="tfDescripcionPlaylist" layoutX="129.0" layoutY="79.0" prefHeight="25.0" prefWidth="367.0" />
+      <JFXButton layoutX="209.0" layoutY="122.0" onAction="#actionCrearPlaylist" prefHeight="25.0" prefWidth="190.0" styleClass="buttonn" text="CREAR PLAYLIST" />
+   </children>
+</AnchorPane>

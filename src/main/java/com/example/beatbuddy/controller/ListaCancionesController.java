@@ -1,6 +1,8 @@
 package com.example.beatbuddy.controller;
 
 import com.example.beatbuddy.model.Cancion;
+import com.example.beatbuddy.model.Playlist;
+import com.example.beatbuddy.model.Reproductor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -19,17 +21,35 @@ public class ListaCancionesController {
     @FXML
     public Label txtNombrePlaylists;
 
-    public void actionReproducir(ActionEvent actionEvent) {
+    private Cancion cancionActual;
+
+    private PantallaController pantallaController;
+
+
+
+    public void setData(Cancion cancion, PantallaController pantallaController){
+
+        txtNombreCancion.setText(cancion.getNombre());
+        txtNombreCancion.setText(cancion.getNombre());
+        cancionActual = cancion;
+        this.pantallaController = pantallaController;
+
     }
+
+    public void actionReproducir(ActionEvent actionEvent) {
+
+        pantallaController.reproductor.setCancionActual(cancionActual);
+        pantallaController.reproductor.comenzar();
+
+    }
+
+    public void actionBorrar(ActionEvent actionEvent, Playlist playlist, Cancion cancion){
+
+        playlist.eliminarCancion(cancion);
+
+    }
+
 
     public void actionBorrar(ActionEvent actionEvent) {
     }
-
-    public void setData(Cancion cancion){
-
-        txtNombreCancion.setText(cancion.getNombre());
-        txtNombreCancion.setText(cancion.getNombre());
-
-    }
-
 }

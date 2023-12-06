@@ -22,14 +22,15 @@ import java.io.IOException;
  */
 
 public class Navegacion {
-    @MagicConstant(stringValues = {Navegacion.LOGIN, Navegacion.REGISTER, Navegacion.PANTALLA},
+    @MagicConstant(stringValues = {Navegacion.LOGIN, Navegacion.REGISTER, Navegacion.PANTALLA, Navegacion.CREARPLAYLIST},
             valuesFromClass = Navegacion.class)
     private static final String RUTA = "/com/example/beatbuddy/views/";
     public static final String LOGIN = "LogIn.fxml";
     public static final String REGISTER = "Register.fxml";
     public static final String PANTALLA = "Pantalla.fxml";
-    public static final String LISTACANCIONES = "ListaCanciones.fxml";
-    public static final String LISTAPLAYLISTS = "ListaPlaylists.fxml";
+    public static final String CREARPLAYLIST = "CrearPlaylist.fxml";
+
+
 
 
     public static boolean cargarInterfaz(String interfaz, Modality modality, String stageTitle){

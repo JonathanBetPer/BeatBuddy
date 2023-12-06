@@ -3,22 +3,26 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="91.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.beatbuddy.controller.ListaCancionesController">
+<HBox prefHeight="100.0" prefWidth="648.0" stylesheets="@../../files/css.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.beatbuddy.controller.ListaCancionesController">
    <children>
-      <Label fx:id="txtNombreCancion" layoutX="42.0" layoutY="28.0" text="BeatBuddy">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label fx:id="txtNombreAutor" layoutX="199.0" layoutY="28.0" text="BeatBuddy">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Button fx:id="buttonReproducir" layoutX="534.0" layoutY="23.0" mnemonicParsing="false" onAction="#actionReproducir" prefHeight="46.0" prefWidth="52.0" styleClass="imagennn" text="&gt;" />
-      <Button fx:id="buttonBorrar" layoutX="435.0" layoutY="23.0" mnemonicParsing="false" onAction="#actionBorrar" prefHeight="46.0" prefWidth="79.0" styleClass="imagennn" text="BORRAR" />
+      <AnchorPane prefHeight="100.0" prefWidth="653.0" style="-fx-border-color: black;">
+         <children>
+            <Label fx:id="txtNombreCancion" layoutX="68.0" layoutY="33.0" text="BeatBuddy" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonReproducir" layoutX="558.0" layoutY="27.0" mnemonicParsing="false" onAction="#actionReproducir" prefHeight="46.0" prefWidth="52.0" styleClass="buttonn" text="&gt;" />
+            <Label fx:id="txtNombreAutor" layoutX="242.0" layoutY="33.0" text="BeatBuddy" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonReproducir1" layoutX="456.0" layoutY="27.0" mnemonicParsing="false" onAction="#actionBorrar" prefHeight="46.0" prefWidth="80.0" styleClass="buttonn" text="BORRAR" />
+         </children>
+      </AnchorPane>
    </children>
-</AnchorPane>
+</HBox>

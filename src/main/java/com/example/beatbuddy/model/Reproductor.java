@@ -21,7 +21,11 @@ public class Reproductor extends Thread implements BasicPlayerListener {
         this.reproductor = new BasicPlayer();
         this.reproductor.addBasicPlayerListener(this);
         this.cancionActual = cancionActual;
-        this.historialCanciones = historialCanciones;
+        if (historialCanciones == null) {
+            this.historialCanciones = new LinkedList<>();
+        } else {
+            this.historialCanciones = historialCanciones;
+        }
         this.colaCanciones = new LinkedList<>();
         this.isRepeat = false;
     }
@@ -32,6 +36,20 @@ public class Reproductor extends Thread implements BasicPlayerListener {
 
 
     public void comenzar() {
+
+        if (cancionActual == null) {
+            if (!colaCanciones.isEmpty()) {
+                cancionActual = colaCanciones.poll();
+            } else {
+                System.out.println("No hay canciones en la cola");
+                return;
+            }
+        }
+
+
+
+
+
 
         try {
                 if (cancionActual.getArchivo() != null) {
@@ -45,6 +63,7 @@ public class Reproductor extends Thread implements BasicPlayerListener {
         }
 
     }
+
 
     public void pausar() {
         try {
@@ -84,6 +103,10 @@ public class Reproductor extends Thread implements BasicPlayerListener {
         }
     }
 
+    public boolean estaReproduciendo() {
+        return reproductor.getStatus() == BasicPlayer.PLAYING;
+    }
+
     public void retrocederCancion() {
         colaCanciones.addFirst(cancionActual);
         cancionActual = historialCanciones.poll();
@@ -100,7 +123,7 @@ public class Reproductor extends Thread implements BasicPlayerListener {
         colaCanciones.add(cancion);
     }
 
-    public void agregarCancionCola(LinkedList<Cancion> listaCanciones) {
+    public void agregarPlaylistCola(LinkedList<Cancion> listaCanciones) {
         colaCanciones.addAll(listaCanciones);
     }
 

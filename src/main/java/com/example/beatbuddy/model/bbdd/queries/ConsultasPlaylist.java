@@ -38,7 +38,7 @@ public class ConsultasPlaylist {
         return playlist;
     }
 
-    private static LinkedList<Cancion> getCancionesInPlaylist(Connection connection, int idPlaylist){
+    public static LinkedList<Cancion> getCancionesInPlaylist(Connection connection, int idPlaylist){
         LinkedList<Cancion> lista = new LinkedList<>();
 
         try {

@@ -32,6 +32,7 @@ public class Playlist {
         this.lista = new LinkedList<>();
     }
 
+
     public String getNombre() {
         return nombre;
     }
